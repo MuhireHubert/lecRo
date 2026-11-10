@@ -17,8 +17,8 @@ const Hero = () => {
             </p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
               <Button href="#contact">Discuss a pilot</Button>
-              <a className="font-semibold text-p3 hover:underline" href="#smart-pallets">
-                Explore smart pallets <span aria-hidden="true">↓</span>
+              <a className="font-semibold text-p3 hover:underline" href="#pallet-lab">
+                Try the simulator <span aria-hidden="true">↓</span>
               </a>
             </div>
           </div>
