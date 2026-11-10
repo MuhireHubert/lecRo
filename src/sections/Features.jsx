@@ -7,6 +7,8 @@ const Features = () => {
     <section>
       <Element name="features">
         <div className="container">
+          <p className="caption">Energy innovation</p>
+          <h2 className="mb-7 h3 max-md:h5 text-p4">Energy from movement</h2>
           <div className="relative flex max-lg:flex-wrap flex-nowrap border-2 border-s3 rounded-7xl lg:overflow-hidden max-lg:flex-col feature-after lg:g7 max-lg:border-none justify-between max-lg:rounded-none max-lg:gap-3">
             {features.map(({ id, icon, caption, title, text, button }) => (
               <div
@@ -26,12 +28,12 @@ const Features = () => {
                 </div>
 
                 <p className="caption mb-5 max-lg:mb-6">{caption}</p>
-                <h2 className="max-w-400 mb-7 h3 text-p4 max-lg:mb-6 max-lg:h5">
+                <h3 className="max-w-400 mb-7 h3 text-p4 max-lg:mb-6 max-lg:h5">
                   {title}
-                </h2>
+                </h3>
                 <p className="mb-11 body-1 max-lg:mb-8 max-lg:body-3">{text}</p>
-                <Link to="demo" offset={-100} spy smooth>
-                  <Button icon={button.icon}>{button.title}</Button>
+                <Link to="projects" offset={-100} spy smooth>
+                  <Button icon={button.icon}>Our projects</Button>
                 </Link>
               </div>
             ))}

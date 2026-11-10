@@ -1,5 +1,6 @@
 import Header from "./sections/Header.jsx";
 import Hero from "./sections/Hero.jsx";
+import SmartPallets from "./sections/SmartPallets.jsx";
 import Features from "./sections/Features.jsx";
 import Projects from "./sections/Projects.jsx";
 import Faq from "./sections/Faq.jsx";
@@ -14,6 +15,7 @@ function App() {
    <main className='overflow-hidden'>
       <Header />
       <Hero />
+      <SmartPallets />
       <Features />
       <Projects />
       <Team />
