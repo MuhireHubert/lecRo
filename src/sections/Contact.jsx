@@ -61,42 +61,45 @@ const Contact = () => {
                 className="flex flex-col gap-12 px-20 py-12 w-[80%] max-w-[90%] border border-pale-blue rounded-3xl h-auto max-md:w-full max-md:px-6 max-md:py-8"
               >
                 <div className="flex flex-col gap-3">
-                  <label htmlFor="name" className="text-gray-500 text-2xl font-semibold">
+                  <label htmlFor="name" className="text-p5 text-2xl font-semibold">
                     Full Name
                   </label>
                   <input
                     type="text"
+                    id="name"
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    className="bg-slate-800 h-16 px-6 py-3 rounded-2xl max-md:h-12 max-md:px-4 max-md:py-2 focus:outline-none"
+                    className="bg-s2 border border-s3 h-16 px-6 py-3 rounded-2xl max-md:h-12 max-md:px-4 max-md:py-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-p3"
                     placeholder="Enter your full name"
                     required
                   />
                 </div>
                 <div className="flex flex-col gap-3">
-                  <label htmlFor="email" className="text-gray-500 text-2xl font-semibold">
+                  <label htmlFor="email" className="text-p5 text-2xl font-semibold">
                     Email
                   </label>
                   <input
                     type="email"
+                    id="email"
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    className="bg-slate-800 h-16 px-6 py-3 rounded-2xl max-md:h-12 max-md:px-4 max-md:py-2 focus:outline-none"
+                    className="bg-s2 border border-s3 h-16 px-6 py-3 rounded-2xl max-md:h-12 max-md:px-4 max-md:py-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-p3"
                     placeholder="yourname@example.com"
                     required
                   />
                 </div>
                 <div className="flex flex-col gap-3">
-                  <label htmlFor="message" className="text-gray-500 text-2xl font-semibold">
+                  <label htmlFor="message" className="text-p5 text-2xl font-semibold">
                     Message
                   </label>
                   <textarea
+                    id="message"
                     name="message"
                     value={form.message}
                     onChange={handleChange}
-                    className="bg-slate-800 px-6 py-3 rounded-2xl overflow-hidden max-md:px-4 max-md:py-2"
+                    className="bg-s2 border border-s3 px-6 py-3 rounded-2xl overflow-hidden max-md:px-4 max-md:py-2"
                     placeholder="Hi, I am interested in..."
                     rows={5} // Adjust rows for desired height
                     required

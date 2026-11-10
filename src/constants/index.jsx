@@ -75,69 +75,39 @@ export const features = [
     },
   ];
 
-  export const projects = [
+  export const projectHistory = [
     {
-      title: "Company Founded",
-      icon: '/logomark.svg',
-      iconBg: "#383E56",
-      date: "September 2024",
-      points: [
-        "Milestone: Focus on piezoelectric road technology.",
-      ],
-      done: true,
+      date: "2025-06-12",
+      title: "Manufacturing plans",
+      points: ["Explored plans for a facility in East or Central Africa."],
     },
     {
-      title: " Research & Development",
-      icon: '/logomark.svg',
-      iconBg: "#E6DEDD",
-      date: "September - October /2024",
-      points: [
-        "Milestone: Feasibility studies and expert collaborations.",
-      ],
-      done: true,
+      date: "2025-01-13",
+      title: "Fundraising plans",
+      points: ["Outlined fundraising for larger-scale implementation."],
     },
     {
-      title: "Pilot Test Launched",
-      icon: '/logomark.svg',
-      iconBg: "#383E56",
-      date: "October - December / 2024",
-      points: [
-        " Milestone: 10m test of piezoelectric system.",
-      ],
-      done: false,
+      date: "2025-01-06",
+      title: "Technology demonstration",
+      points: ["Recorded an energy generation test."],
     },
     {
-      title: "Technology Demonstration",
-      icon: '/logomark.svg',
-      iconBg: "#E6DEDD",
-      date: "January / 2025",
-      points: [
-        "Milestone: Successful energy generation test.",
-      ],
-      done: false,
+      date: "2024-11-01",
+      title: "Piezoelectric pilot",
+      points: ["Recorded a 10 m test of the piezoelectric system."],
     },
     {
-      title: "Next Fundraising Round",
-      icon: '/logomark.svg',
-      iconBg: "#E6DEDD",
-      date: "January / 2025",
-      points: [
-        "Milestone: Fundraising for larger scale implementation",
-      ],
-      done: false,
+      date: "2024-10-15",
+      title: "Research and development",
+      points: ["Conducted feasibility studies and collaborated with experts."],
     },
     {
-      title: "Manufacturing Plans",
-      icon: '/logomark.svg',
-      iconBg: "#E6DEDD",
-      date: "June / 2025",
-      points: [
-        "Milestone: Facility setup planned in East/Central Africa",
-      ],
-      done: false,
+      date: "2024-09-01",
+      title: "Company founded",
+      points: ["Lec-Ro began with a focus on piezoelectric road technology."],
     },
   ];
-  
+
   export const teamMembers = [
     {
       id: '0',
@@ -391,7 +361,7 @@ export const features = [
     },
     {
       id: '2',
-      title: 'Milestones',
+      title: 'Project history',
       url: 'projects',
     },
     {

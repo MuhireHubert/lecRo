@@ -1,113 +1,113 @@
 import { useEffect, useState } from "react";
 import { Element } from "react-scroll";
-import { getAllHistoryItems } from '../api/get';
+import { getAllHistoryItems } from "../api/get";
+import { projectHistory } from "../constants/index.jsx";
 
-import {
-    VerticalTimeline,
-    VerticalTimelineElement,
-  } from "react-vertical-timeline-component";
+const dateFormat = new Intl.DateTimeFormat("en", {
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
 
-  import "react-vertical-timeline-component/style.min.css";
-
-  const HistoryCard = ({ historyItem }) => {
-    return (
-      <VerticalTimelineElement
-        contentStyle={{
-          background: "#1d1836",
-          color: "#fff",
-        }}
-        contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-        date={historyItem.date}
-        iconStyle={{ background: "#915eff" }}
-        icon={
-          <div className='flex justify-center items-center w-full h-full'>
-            <img 
-              src="/images/lecRo.svg" 
-              alt="lecRo Logo" 
-              className='w-[60%] h-[60%] object-contain'
-            />
-          </div>
-        }
-      >
-        <div>
-          <h3 className='text-white text-[24px] font-bold'>{historyItem.title}</h3>
-        </div>
-  
-        <ul className='mt-5 list-disc ml-5 space-y-2'>
-          {historyItem.points.map((point, index) => (
-            <li
-              key={`history-point-${index}`}
-              className='text-white-100 text-[14px] pl-1 tracking-wider'
-            >
-              {point}
-            </li>
-          ))}
-        </ul>
-      </VerticalTimelineElement>
-    );
-  }
-
-const milestones = [
+const engagements = [
   {
-    stage: "Foundation",
-    title: "Piezoelectric energy research",
-    description: "Lec-Ro began by exploring how pressure on roads and tiles could generate electricity.",
+    label: "For logistics operators",
+    title: "Scope a pilot on one route",
+    description: "Choose a dispatch point, a receiving point, and a return process. Agree on what to measure, such as pallet return rates or time spent reconciling handoffs.",
   },
   {
-    stage: "Current focus",
-    title: "Smart pallets for logistics",
-    description: "We’re exploring how digital IDs and sensors could help teams trace handoffs, monitor sensitive loads, and recover pallets.",
-  },
-  {
-    stage: "Next step",
-    title: "Define a pilot route",
-    description: "We’d like to work with a logistics partner to choose a route and measure outcomes such as return rates or the quality of tracking data.",
+    label: "For technical collaborators",
+    title: "Test tracking and sensor power",
+    description: "Explore which tags and sensors suit the route, how often they need to report, and how power use affects battery maintenance.",
   },
 ];
 
-const Projects = () => {
+export default function Projects() {
   const [historyItems, setHistoryItems] = useState([]);
 
   useEffect(() => {
+    let current = true;
     getAllHistoryItems()
-      .then((items) => setHistoryItems(items || []))
+      .then((items) => {
+        if (current && Array.isArray(items)) setHistoryItems(items);
+      })
       .catch((error) => console.error("Error fetching project history:", error));
+    return () => {
+      current = false;
+    };
   }, []);
 
+  const history = historyItems.length ? historyItems : projectHistory;
+
   return (
-    <section className="py-20 max-md:py-14" aria-labelledby="milestones-title">
-      <Element name="projects">
-        <div className="container">
-          <h2 id="milestones-title" className="mb-4 h3 max-md:h5 text-p4">
-            Milestones
-          </h2>
-          <p className="mb-8 max-w-640 body-3">
-            From piezoelectric research to exploring a smart-pallet pilot.
+    <section className="py-20 max-md:py-14" aria-labelledby="project-history-title">
+      <Element name="projects" id="project-history" className="container scroll-mt-28">
+        <div className="mb-9 max-w-640">
+          <p className="caption">Our work</p>
+          <h2 id="project-history-title" className="mb-4 h3 max-md:h5 text-p4">Project history</h2>
+          <p className="body-3">
+            Lec-Ro began with piezoelectric research on roads and tiles. We’re now exploring
+            how low-power tracking can help logistics teams trace shipments and recover reusable pallets.
           </p>
-          <ol className="grid gap-4 md:grid-cols-3">
-            {milestones.map(({ stage, title, description }) => (
-              <li key={stage} className="rounded-3xl border border-s3 bg-s2 p-6">
-                <p className="caption mb-3">{stage}</p>
-                <h3 className="mb-3 text-xl font-semibold text-p4">{title}</h3>
-                <p className="body-3">{description}</p>
-              </li>
-            ))}
-          </ol>
         </div>
 
-        {historyItems.length > 0 && (
-          <div className="mt-12">
-            <h3 className="container h5 text-p4">Project history</h3>
-            <VerticalTimeline>
-              {historyItems.map((historyItem) => (
-                <HistoryCard key={historyItem._id} historyItem={historyItem} />
-              ))}
-            </VerticalTimeline>
+        <div className="mb-9 rounded-3xl border border-p2/60 bg-s2 p-6 sm:p-8">
+          <p className="caption mb-3">Our mission</p>
+          <h3 className="mb-3 h6 text-p4">Make reusable pallets easier to trace and recover</h3>
+          <p className="max-w-640 body-3">
+            We want teams to know which pallets left, where they changed hands, and which came back.
+            Our energy research informs a practical question for that work: how little power can a
+            tracker use and still give operators the information they need?
+          </p>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <div>
+            <h3 className="mb-5 h6 text-p4">Milestones</h3>
+            <ol className="space-y-5 border-l border-s3 pl-5">
+              <li className="relative">
+                <span aria-hidden="true" className="absolute -left-[25px] top-2 size-2 rounded-full bg-p2" />
+                <p className="small-compact uppercase text-p3">Current focus</p>
+                <h4 className="my-1 font-semibold text-p4">Smart pallets for logistics</h4>
+                <p className="body-3">Explore digital IDs, sensor readings, and ways to track empty pallets on their return.</p>
+              </li>
+              {history.map(({ _id, date, title, points }) => {
+                const timestamp = Date.parse(date);
+                const displayDate = Number.isFinite(timestamp) ? dateFormat.format(timestamp) : date;
+                return (
+                  <li key={_id ?? title} className="relative">
+                    <span aria-hidden="true" className="absolute -left-[25px] top-2 size-2 rounded-full bg-p2" />
+                    <p className="small-compact uppercase text-p3">{displayDate}</p>
+                    <h4 className="my-1 font-semibold text-p4">{title.trim()}</h4>
+                    <ul className="space-y-1 body-3">
+                      {points?.map((point) => (
+                        <li key={point}>{point.trim().replace(/^Milestone:\s*/i, "")}</li>
+                      ))}
+                    </ul>
+                  </li>
+                );
+              })}
+            </ol>
           </div>
-        )}
+
+          <div>
+            <h3 className="mb-5 h6 text-p4">Engagements</h3>
+            <p className="mb-4 body-3">Two ways to work with Lec-Ro on the next phase.</p>
+            <div className="grid gap-3">
+              {engagements.map(({ label, title, description }) => (
+                <article key={title} className="rounded-2xl border border-s3 bg-s2 p-5">
+                  <p className="caption mb-2">{label}</p>
+                  <h4 className="mb-2 text-lg font-semibold text-p4">{title}</h4>
+                  <p className="body-3">{description}</p>
+                </article>
+              ))}
+            </div>
+            <a href="#contact" className="mt-5 inline-block font-semibold text-p3 underline underline-offset-4">
+              Discuss an engagement
+            </a>
+          </div>
+        </div>
       </Element>
     </section>
   );
-};
-
-export default Projects;
+}
