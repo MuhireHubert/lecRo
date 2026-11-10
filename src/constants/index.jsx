@@ -2,9 +2,9 @@ export const features = [
     {
       id: '0',
       icon: '/images/feature-1.png',
-      caption: 'Clean Energy',
-      title: 'Piezoelectric Technology',
-      text: "Our piezoelectric devices in roadways generate clean, renewable energy. Vehicles passing over them convert traffic pressure into electricity. This innovative technology turns Rwanda’s roads into energy sources, reducing reliance on traditional grids. By using traffic flow, we are advancing smart, self-sustaining cities that are both efficient and environmentally sustainable, driving Rwanda towards a greener, smarter future.",
+      caption: 'Energy research',
+      title: 'Harvesting energy from movement',
+      text: "Lec-Ro began by exploring how pressure on roads and tiles could generate small amounts of electricity. Piezoelectric materials produce an electrical charge when they flex or compress.",
       button: {
         icon: '/images/magictouch.svg',
         title: 'Watch the demo',
@@ -14,9 +14,9 @@ export const features = [
     {
       id: '1',
       icon: '/images/feature-2.png',
-      caption: 'Smart Energy',
-      title: 'Efficiency Matters',
-      text: 'Our piezoelectric devices generate clean energy and reduce environmental impact. By converting traffic pressure into power, they lower carbon emissions, reduce fossil fuel use, and save costs on infrastructure like streetlights. This technology turns Rwanda’s roads into energy sources, contributing to smarter, efficient, sustainable cities, while supporting economic growth and environmental responsibility.',
+      caption: 'Smart logistics research',
+      title: 'Powering pallet sensors',
+      text: "We’re exploring how to run pallet trackers and sensors with less power. A pilot could test how often a device needs to report, how long its battery lasts, and whether energy harvested from movement could extend that life.",
       button: {
         icon: '/images/docs.svg',
         title: 'Read the docs',
@@ -28,90 +28,53 @@ export const features = [
     {
       id: '0',
       icon: '/images/detail-1.png',
-      title: 'Energy Efficient',
+      title: 'Measure energy output',
     },
     {
       id: '1',
       icon: '/images/detail-2.png',
-      title: 'Reliable',
+      title: 'Test battery life',
     },
     {
       id: '2',
       icon: '/images/detail-3.png',
-      title: 'Ultra fast power generation',
+      title: 'Tune reporting intervals',
     },
     {
       id: '3',
       icon: '/images/detail-4.png',
-      title: '24 / 7 power generation',
+      title: 'Assess field durability',
     },
   ];
   
   export const faq = [
     {
-      id: '0',
-      question: 'What is Lec-Ro Ltd?',
-      answer:
-        'Lec-Ro Ltd explores smart pallets for logistics and develops piezoelectric energy concepts for roads and tiles.',
+      id: 'what-is-a-smart-pallet',
+      question: 'What is a smart pallet?',
+      answer: 'A smart pallet has a digital identifier, a tracker, or both. A barcode or RFID tag can record handoffs. A powered tracker can report location or conditions between checkpoints when the route and network support it.',
     },
     {
-      id: '1',
-      question: 'What is Piezoelectric technology?',
-      answer:
-        "Piezoelectricity is the ability of certain materials to generate electricity when subjected to mechanical stress. It's used in sensors, energy harvesters, and actuators.",
+      id: 'what-can-a-pallet-monitor',
+      question: 'What could a smart pallet monitor?',
+      answer: 'A pilot could focus on the pallet’s last recorded location, return status, temperature, or shock. We would choose the sensors and reporting intervals around your route and the data your team needs.',
     },
     {
-      id: '2',
-      question: 'How does piezoelectric technology work?',
-      answer:
-        'Piezoelectric materials produce electricity when they are squeezed or bent. Lec-Ro uses these materials in roads and tiles to harness energy from movement and use it for things like lighting and charging stations.',
+      id: 'reusable-pallets',
+      question: 'How could this help recover reusable pallets?',
+      answer: 'A reusable pallet can keep the same ID across trips. Linking that ID to each new shipment helps teams see which load it carried, where it was handed off, and whether the empty pallet returned.',
     },
     {
-      id: '3',
-      question: 'What are the benefits of using piezoelectric and mechanical energy technologies in road construction?',
-      answer:
-        'The combination of piezoelectric and mechanical energy technologies in road construction offers higher energy efficiency, renewable energy generation and reduced operational costs',
+      id: 'pilot',
+      question: 'How can my team discuss a pilot?',
+      answer: 'Use the contact form and tell us about one route, what you ship, and what you want to measure. We can discuss the checkpoints, tracking options, and results that would make a pilot useful.',
     },
     {
-      id: '4',
-      question: 'What kinds of tiles does Lec-Ro Ltd offer?',
-      answer:
-        'Lec-Ro Ltd offers energy-generating tiles that can be used in areas with high foot traffic, such as commercial buildings and walkways. These tiles can convert the energy from people walking on them into electricity.',
-    },
-    {
-      id: '5',
-      question: 'How much energy does it produce?',
-      answer:
-        'The amount of energy produced depends on factors like traffic volume, tile density, and system design. However, typical installations can generate significant electricity to contribute to local energy needs.',
-    },
-    
-    {
-      id: '6',
-      question: 'Where is the electricty stored?',
-      answer:
-        'The electricity generated is typically stored in nearby energy storage units. These units can be batteries, capacitors, or other suitable storage solutions.',
-    },
-    {
-      id: '7',
-      question: 'How is the electricity distributed?',
-      answer:
-        'The generated electricity can be used in various ways, such as powering local infrastructure like streetlights and traffic signals, feeding back into the electrical grid, or storing it for later use in batteries.',
-    },
-    {
-      id: '8',
-      question: 'How does Lec-Ro ensure the durability of its piezoelectric and mechanical energy systems?',
-      answer:
-        'Lec-Ro uses high-quality materials, rigorous testing, and expert collaboration to ensure the durability of its piezoelectric and mechanical energy systems. These systems are designed to withstand harsh conditions and provide long-term performance.',
-    },
-    
-    {
-      id: '9',
-      question: "What is Lec-Ro’s vision for the future?",
-      answer:
-        'Our vision is to expand the implementation of piezoelectric and mechanical energy generation technology across Africa and beyond. We aim to contribute to the development of smart cities and sustainable energy infrastructures, reducing reliance on fossil fuels.',
+      id: 'energy-harvesting',
+      question: 'How does Lec-Ro’s energy research relate to smart pallets?',
+      answer: 'Our earlier work explored generating electricity from pressure on roads and tiles. For pallets, we’re interested in whether lower-power electronics or energy harvesting could reduce battery maintenance. We would need to measure that on real routes.',
     },
   ];
-  
+
   export const projects = [
     {
       title: "Company Founded",
@@ -428,7 +391,7 @@ export const features = [
     },
     {
       id: '2',
-      title: 'Projects',
+      title: 'Milestones',
       url: 'projects',
     },
     {

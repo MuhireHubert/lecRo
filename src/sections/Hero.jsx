@@ -27,23 +27,18 @@ const Hero = () => {
             <div className="relative">
               <img
                 src="/images/lecRo.svg"
-                className="absolute left-3 top-2 w-28 sm:w-36"
+                className="absolute left-3 top-2 w-32 sm:w-40"
                 alt="Lec-Ro"
                 width="586"
                 height="244"
               />
               <img
-                src="/images/smart-pallet.svg"
-                alt="Concept illustration of a loaded pallet with a tracker and wireless signals"
-                width="720"
-                height="520"
-              />
-              <img
-                src="/logomark.svg"
-                alt=""
-                className="absolute left-[58%] top-[51%] w-[8%] rounded-md bg-p3"
-                width="202"
-                height="202"
+                src="/images/smart-pallet-warehouse.jpg"
+                alt="Smart pallet concept with a compact tracker beneath a stack of wrapped cartons in a warehouse"
+                className="h-auto w-full"
+                width="1200"
+                height="900"
+                fetchPriority="high"
               />
             </div>
             <figcaption className="border-t border-s3 px-5 py-3 text-sm text-p5">

@@ -59,7 +59,7 @@ const Header = () => {
                 <li className="nav-li">
                   <NavLink title="Smart pallets" target="smart-pallets" />
                   <div className="dot" />
-                  <NavLink title="projects" />
+                  <NavLink title="Milestones" target="projects" />
                 </li>
 
                 <li className="nav-logo">

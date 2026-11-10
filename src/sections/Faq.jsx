@@ -1,22 +1,9 @@
 import { Element } from "react-scroll";
-import { getAllFaqItems } from "../api/get";
+import { faq } from "../constants/index.jsx";
 import FaqItem from "../components/FaqItem.jsx";
-import { useState, useEffect } from "react";
 
 const Faq = () => {
-  const [faqItems, setFaqItems] = useState([]);
-  const halfLength = Math.floor(faqItems.length / 2);
-
-  useEffect(() => {
-    getAllFaqItems()
-      .then((data) => {
-        setFaqItems(data || []);
-      })
-      .catch((error) => {
-        console.error('Error fetching FAQ items:', error);
-        setFaqItems([]);
-      });
-  }, []);
+  const halfLength = Math.ceil(faq.length / 2);
 
   return (
     <section>
@@ -27,7 +14,7 @@ const Faq = () => {
               Frequently Asked Questions
             </h3>
             <p className="body-1 max-lg:max-w-sm">
-              You've got questions, we've got answers.
+              How smart pallets work, what a pilot could measure, and how to get involved.
             </p>
           </div>
 
@@ -41,14 +28,14 @@ const Faq = () => {
             </div>
 
             <div className="relative flex-1 pt-24">
-              {faqItems.slice(0, halfLength).map((item, index) => (
-                <FaqItem key={item._id} item={item} index={index} />
+              {faq.slice(0, halfLength).map((item, index) => (
+                <FaqItem key={item.id} item={item} index={index} />
               ))}
             </div>
 
             <div className="relative flex-1 lg:pt-24">
-              {faqItems.slice(halfLength).map((item, index) => (
-                <FaqItem key={item._id} item={item} index={halfLength + index} />
+              {faq.slice(halfLength).map((item, index) => (
+                <FaqItem key={item.id} item={item} index={halfLength + index} />
               ))}
             </div>
           </div>

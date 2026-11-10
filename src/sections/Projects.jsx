@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useEffect, useState } from "react";
 import { Element } from "react-scroll";
 import { getAllHistoryItems } from '../api/get';
 
@@ -47,48 +47,67 @@ import {
     );
   }
 
+const milestones = [
+  {
+    stage: "Foundation",
+    title: "Piezoelectric energy research",
+    description: "Lec-Ro began by exploring how pressure on roads and tiles could generate electricity.",
+  },
+  {
+    stage: "Current focus",
+    title: "Smart pallets for logistics",
+    description: "We’re exploring how digital IDs and sensors could help teams trace handoffs, monitor sensitive loads, and recover pallets.",
+  },
+  {
+    stage: "Next step",
+    title: "Define a pilot route",
+    description: "We’d like to work with a logistics partner to choose a route and measure outcomes such as return rates or the quality of tracking data.",
+  },
+];
+
 const Projects = () => {
   const [historyItems, setHistoryItems] = useState([]);
 
   useEffect(() => {
     getAllHistoryItems()
-        .then((data) => {
-            setHistoryItems(data);
-        })
-        .catch((error) => {
-            console.error('Projects component: Error fetching history items:', error);
-        });
+      .then((items) => setHistoryItems(items || []))
+      .catch((error) => console.error("Error fetching project history:", error));
   }, []);
 
   return (
-    <section>
-        <Element name="projects" className="relative">
-        <div className="container relative z-2 py-28">
-            <div>
-            <h3 className="h3 max-md:h5 max-w-640 max-lg:max-w-md mb-7 text-p4">
-                Our journey so far.
-            </h3>
-            <p className="body-1 max-lg:max-w-sm">
-                milestones.
-            </p>
-            </div>
-
-            <div className="faq-line_after w-0.5 h-full absolute left-[calc(50%-1px)] top-0 -z-1 bg-s2" />
-        </div>
-
-        <div className='mt-20 flex flex-col'>
-            <VerticalTimeline>
-            {historyItems.map((historyItem, index) => (
-                <HistoryCard
-                key={`history-${historyItem._id}`}
-                historyItem={historyItem}
-                />
+    <section className="py-20 max-md:py-14" aria-labelledby="milestones-title">
+      <Element name="projects">
+        <div className="container">
+          <h2 id="milestones-title" className="mb-4 h3 max-md:h5 text-p4">
+            Milestones
+          </h2>
+          <p className="mb-8 max-w-640 body-3">
+            From piezoelectric research to exploring a smart-pallet pilot.
+          </p>
+          <ol className="grid gap-4 md:grid-cols-3">
+            {milestones.map(({ stage, title, description }) => (
+              <li key={stage} className="rounded-3xl border border-s3 bg-s2 p-6">
+                <p className="caption mb-3">{stage}</p>
+                <h3 className="mb-3 text-xl font-semibold text-p4">{title}</h3>
+                <p className="body-3">{description}</p>
+              </li>
             ))}
-            </VerticalTimeline>
+          </ol>
         </div>
-        </Element>
-      </section>
-  )
-}
 
-export default Projects
+        {historyItems.length > 0 && (
+          <div className="mt-12">
+            <h3 className="container h5 text-p4">Project history</h3>
+            <VerticalTimeline>
+              {historyItems.map((historyItem) => (
+                <HistoryCard key={historyItem._id} historyItem={historyItem} />
+              ))}
+            </VerticalTimeline>
+          </div>
+        )}
+      </Element>
+    </section>
+  );
+};
+
+export default Projects;
