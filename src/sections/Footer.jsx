@@ -36,7 +36,7 @@ const Footer = () => {
 </div>
     </div>
   <div className='flex justify-center align-center mb-10'> 
-    <h4> 2024. Lec-Ro. All Rights Reserved.</h4>
+    <h4> 2026. Lec-Ro. All Rights Reserved.</h4>
   </div>
     </>
   )
