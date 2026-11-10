@@ -52,7 +52,7 @@ export const features = [
       id: '0',
       question: 'What is Lec-Ro Ltd?',
       answer:
-        'Lec-Ro Ltd is a company focused on sustainable energy solutions. They specialize in using piezoelectric technology in road construction and tiles to generate electricity.',
+        'Lec-Ro Ltd explores smart pallets for logistics and develops piezoelectric energy concepts for roads and tiles.',
     },
     {
       id: '1',

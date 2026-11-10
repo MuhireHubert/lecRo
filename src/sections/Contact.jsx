@@ -47,7 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <Element name='contact'>
+    <Element id="contact" name="contact" className="scroll-mt-28">
       <section >
       <div className='container mt-8'>
       <div className="flex flex-col justify-center items-center w-full gap-8">

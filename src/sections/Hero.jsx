@@ -1,36 +1,55 @@
-import { Element, Link as LinkScroll } from "react-scroll";
+import { Element } from "react-scroll";
 import Button from "../components/Button.jsx";
 
 const Hero = () => {
   return (
-    <section className="relative pt-48 pb-40 max-lg:pt-52 max-lg:pb-36 max-md:pt-36 max-md:pb-32">
+    <section className="pt-40 pb-20 max-md:pt-28 max-md:pb-14">
       <Element name="hero">
-        <div className="container flex">
-          <div className="relative z-2 max-w-512 max-lg:max-w-388">
-            <div className="caption small-2 uppercase text-p3">
-              Where the road makes electricity
-            </div>
-            <h1 className="mb-6 h1 text-p4 uppercase max-lg:mb-7 max-lg:h2 max-md:mb-4 max-md:text-5xl max-md:leading-12">
-              Road to the Future.
+        <div className="container grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <p className="caption">Lec-Ro · Smart logistics</p>
+            <h1 className="mb-6 text-5xl font-black leading-tight text-p4 lg:text-6xl">
+              See where your pallets go.
             </h1>
-            <p className="max-w-440 mb-14 body-1 max-md:mb-10">
-            Lec-Ro is revolutionizing infrastructure with sustainable, piezoelectric energy solutions.
+            <p className="mb-8 max-w-440 body-1 max-md:body-3">
+              Lec-Ro is exploring smart pallets to help logistics teams trace
+              shipments, monitor sensitive loads, and recover reusable pallets.
             </p>
-            <LinkScroll to="features" offset={-100} spy smooth>
-              <Button icon="/images/zap.svg">Learn More</Button>
-            </LinkScroll>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+              <Button href="#contact">Discuss a pilot</Button>
+              <a className="font-semibold text-p3 hover:underline" href="#smart-pallets">
+                Explore smart pallets <span aria-hidden="true">↓</span>
+              </a>
+            </div>
           </div>
 
-          <Element name="demo">
-            <div className="absolute -top-32 left-[calc(50%-340px)] w-[1230px] pointer-events-none hero-img_res">
-            {/* <img
-              src="/images/hero.png"
-              className="size-1230 max-lg:h-auto"
-              alt="hero"
-            /> */}
-          </div>
-          </Element>
-          
+          <figure className="relative overflow-hidden rounded-3xl border border-s3 bg-s2">
+            <div className="relative">
+              <img
+                src="/images/lecRo.svg"
+                className="absolute left-3 top-2 w-28 sm:w-36"
+                alt="Lec-Ro"
+                width="586"
+                height="244"
+              />
+              <img
+                src="/images/smart-pallet.svg"
+                alt="Concept illustration of a loaded pallet with a tracker and wireless signals"
+                width="720"
+                height="520"
+              />
+              <img
+                src="/logomark.svg"
+                alt=""
+                className="absolute left-[58%] top-[51%] w-[8%] rounded-md bg-p3"
+                width="202"
+                height="202"
+              />
+            </div>
+            <figcaption className="border-t border-s3 px-5 py-3 text-sm text-p5">
+              Lec-Ro smart pallet concept
+            </figcaption>
+          </figure>
         </div>
       </Element>
     </section>
